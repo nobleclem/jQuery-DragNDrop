@@ -1,0 +1,23 @@
+{
+    "name": "@nobleclem/jquery-dragndrop",
+    "description": "Enable drag and drop functionality on a list of elements",
+    "author": {
+        "name": "Patrick Springstubbe",
+        "url" : "http://springstubbe.us"
+    },
+    "version": "1.0",
+    "main": "jquery.dragndrop.js",
+    "license": "MIT",
+    "keywords": [
+        "jquery",
+        "DragNDrop",
+    ],
+    "homepage": "https://github.com/nobleclem/jQuery-DragNDrop",
+    "repository": {
+        "type": "git",
+        "url" : "https://github.com/nobleclem/jQuery-DragNDrop.git"
+    },
+    "peerDependencies": {
+        "jquery": ">=1.11.0"
+    }
+}
