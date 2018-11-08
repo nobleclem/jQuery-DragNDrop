@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Drag &amp; Drop Demo</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./jquery.dragndrop.js"></script>
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        ol li {
+            border: 1px solid;
+            padding: 20px;
+            margin: 5px 0;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: ' ';
+            display: table;
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Drag &amp; Drop Demo</h2>
+    <ol class="clearfix">
+        <li>
+            1) Bacon ipsum dolor amet jerky short loin ham meatloaf shankle bacon. Kevin prosciutto tongue beef, cow ball tip ribeye chuck
+ chicken fatback pork chop. Jerky tail pork meatloaf. Ham boudin landjaeger, cupim turkey ball tip tail rump biltong picanha. Capicola cow
+ biltong strip steak kielbasa jerky. Turkey shoulder flank, salami ham hock beef pork belly fatback landjaeger. Tri-tip leberkas porchetta
+ short ribs bresaola.
+        </li>
+        <li>
+            2) Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus
+ brains, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil s
+talking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu
+zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cere
+bro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.
+        </li>
+        <li>
+            3) Ice cream candy danish ice cream. Biscuit jelly beans gingerbread tart bear claw jujubes. Cheesecake jelly-o macaroon bonbo
+n danish cookie cake pie. Lemon drops liquorice carrot cake apple pie marzipan. Cheesecake gummi bears cake jelly pie ice cream pastry. Ch
+eesecake wafer chocolate cake chocolate bar muffin muffin. Topping croissant lollipop jelly tiramisu bonbon cake. Brownie candy cheesecake
+ chocolate jujubes biscuit. Muffin gummi bears jelly brownie oat cake brownie caramels.
+        </li>
+        <li>
+            4) Bacon ipsum dolor amet jerky short loin ham meatloaf shankle bacon. Kevin prosciutto tongue beef, cow ball tip ribeye chuck
+ chicken fatback pork chop. Jerky tail pork meatloaf. Ham boudin landjaeger, cupim turkey ball tip tail rump biltong picanha. Capicola cow
+ biltong strip steak kielbasa jerky. Turkey shoulder flank, salami ham hock beef pork belly fatback landjaeger. Tri-tip leberkas porchetta
+ short ribs bresaola.
+        </li>
+        <li>
+            5) Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus
+ brains, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil s
+talking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu
+zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cere
+bro.
+        </li>
+        <li>
+            6) Ice cream candy danish ice cream. Biscuit jelly beans gingerbread tart bear claw jujubes. Cheesecake jelly-o macaroon bonbo
+n danish cookie cake pie. Lemon drops liquorice carrot cake apple pie marzipan. Cheesecake gummi bears cake jelly pie ice cream pastry. Ch
+eesecake wafer chocolate cake chocolate bar muffin muffin. Topping croissant lollipop jelly tiramisu bonbon cake. Brownie candy cheesecake
+ chocolate jujubes biscuit. Muffin gummi bears jelly brownie oat cake brownie caramels.
+        </li>
+    </ol>
+
+    <script>
+        $(function(){
+            $('ol').dragndrop({
+                onDrop: function( element, droppedElement ) {
+                    console.log( 'element dropped: ' );
+                    console.log( droppedElement );
+                }
+            });
+        });
+    </script>
+</body>
+</html>
