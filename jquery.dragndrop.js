@@ -1,6 +1,6 @@
 /**
  * Simple Drag & Drop
- * @Version: 1.0
+ * @Version: 1.0.1
  * @Author: Patrick Springstubbe
  * @Contact: @JediNobleclem
  * @Website: springstubbe.us
@@ -99,6 +99,7 @@
                         instance.dragElem = this;
 
                         event.originalEvent.dataTransfer.effectAllowed = 'move';
+                        event.originalEvent.dataTransfer.setData('text/plain', '');
                         $(this).addClass('jqdndDragging');
                     })
                     .on( 'dragenter', function( event ){})
