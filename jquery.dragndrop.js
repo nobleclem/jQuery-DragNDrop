@@ -1,6 +1,6 @@
 /**
  * Simple Drag & Drop
- * @Version: 1.0.1
+ * @Version: 1.0.2
  * @Author: Patrick Springstubbe
  * @Contact: @JediNobleclem
  * @Website: springstubbe.us
@@ -18,13 +18,14 @@
 (function($){
     var defaults = {
         loadStyles: true, // load default Drag & Drop Styles
+        dragElemSelector: '> *',
 
         // Callbacks
         onDrop: function( element, droppedElement ) {}
     };
 
     var stylesLoaded = false;
-    var stylesDefaults = $('<style type="text/css">.jqdndLoaded > * { cursor: move; user-select: none; } .jqdndLoaded .jqdndDragging { opacity: 0.5; }</style>');
+    var stylesDefaults = $('<style type="text/css">.jqdndLoaded *[draggable="true"] { cursor: move; user-select: none; } .jqdndLoaded .jqdndDragging { opacity: 0.5; }</style>');
 
     /* Add Plugin to jQuery */
     $.fn.dragndrop = function( options ) {
@@ -56,7 +57,6 @@
         }
     };
 
-
     /* Setup Functionality */
     function DragNDrop( element, options )
     {
@@ -84,7 +84,7 @@
     DragNDrop.prototype = {
         load: function() {
             var instance = this;
-            var items    = $(instance.element).find('> *');
+            var items    = $(instance.element).find( instance.options.dragElemSelector );
 
             // make sure this has not already been loaded
             if( $(instance.element).data( 'plugin_dragndrop' ) ) {

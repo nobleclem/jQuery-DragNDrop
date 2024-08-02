@@ -21,6 +21,11 @@ $('ul').dragndrop({
 ```
 
 ### Options
+| Option            | Values   | Default   | Description                      |
+| ----------------- | -------- | --------- | -------------------------------- |
+| loadStyles        | bool     | true      | load the default styles          |
+| dragElemSelector  | string   | > *       | what elements are draggable      |
+| onDrop            | function |           | fires when an element is dropped |
 
 
 ### Methods
