@@ -1,6 +1,6 @@
 /**
  * Simple Drag & Drop
- * @Version: 1.0.2
+ * @Version: 1.0.3
  * @Author: Patrick Springstubbe
  * @Contact: @JediNobleclem
  * @Website: springstubbe.us
@@ -16,7 +16,7 @@
  *
  **/
 (function($){
-    var defaults = {
+    let defaults = {
         loadStyles: true, // load default Drag & Drop Styles
         dragElemSelector: '> *',
 
@@ -24,8 +24,8 @@
         onDrop: function( element, droppedElement ) {}
     };
 
-    var stylesLoaded = false;
-    var stylesDefaults = $('<style type="text/css">.jqdndLoaded *[draggable="true"] { cursor: move; user-select: none; } .jqdndLoaded .jqdndDragging { opacity: 0.5; }</style>');
+    let stylesLoaded = false;
+    let stylesDefaults = $('<style type="text/css">.jqdndLoaded *[draggable="true"] { cursor: move; user-select: none; } .jqdndLoaded .jqdndDragging { opacity: 0.5; }</style>');
 
     /* Add Plugin to jQuery */
     $.fn.dragndrop = function( options ) {
@@ -33,8 +33,8 @@
             return;
         }
 
-        var args = arguments;
-        var ret;
+        let args = arguments;
+        let ret;
 
         // initialize drag and drop on element(s)
         if( (options === undefined) || (typeof options === 'object' ) ) {
@@ -46,7 +46,7 @@
         // execute built in method (unload, reload, etc) on element(s)
         } else if( (typeof options === 'string') && (options[0] !== '_') && (options !== 'init') ) {
             this.each(function(){
-                var instance = $.data( this, 'plugin_dragndrop' );
+                let instance = $.data( this, 'plugin_dragndrop' );
 
                 if( (instance instanceof DragNDrop) && (typeof instance[ options ] === 'function') ) {
                     ret = instance[ options ].apply( instance, Array.prototype.slice.call( args, 1 ) );
@@ -83,11 +83,11 @@
 
     DragNDrop.prototype = {
         load: function() {
-            var instance = this;
-            var items    = $(instance.element).find( instance.options.dragElemSelector );
+            let instance = this;
+            let items    = $(instance.element).find( instance.options.dragElemSelector );
 
             // make sure this has not already been loaded
-            if( $(instance.element).data( 'plugin_dragndrop' ) ) {
+            if( $(instance.element).hasClass('jqdndLoaded') ) {
                 return true;
             }
 
@@ -137,8 +137,8 @@
         },
 
         unload: function(){
-            var instance = this;
-            var items    = $(instance.element).find('> *');
+            let instance = this;
+            let items    = $(instance.element).find('> *');
 
             $(instance.element).removeClass('jqdndLoaded');
 
@@ -151,8 +151,6 @@
                     .off( 'drop' )
                     .off( 'dragend' );
             });
-
-            $(instance.element).data( 'plugin_dragndrop', null );
         },
 
         reload: function() {

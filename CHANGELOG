@@ -1,3 +1,7 @@
+1.0.3 (2026-04-22)
+==================
+Bugfix: dragndrop('reload') not working properly
+
 1.0.2 (2024-08-02)
 ==================
 Add ability to set draggable element selector
